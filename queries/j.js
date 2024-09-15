@@ -1,1 +1,1 @@
-db.orders.find({ $or: [{ "quantity": { $gt: 10 } }, { "discount": { $lt: 0.1 } }] })
+db.orders.find({ $or: [{ "details.quantity": { $gt: 10 } }, { "details.discount": { $lt: 0.1 } }] })
