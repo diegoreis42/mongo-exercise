@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27027:27027"
+    environment:
+      MONGO_INITDB_DATABASE: northwind
+    volumes:
+      - "./data:/imports"
+      - "./scripts:/docker-entrypoint-initdb.d"
+      - "./output:/output"
+      - "./queries:/queries"
