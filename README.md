@@ -27,7 +27,7 @@ before running the docker command.
 
 ## Answers
 
-If you are my professor where is the answers for the exercises to facilitate your life :)
+If you are my professor, here is the answers for the exercises to make your life easier :)
 
 ```javascript
 // A
