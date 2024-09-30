@@ -10,10 +10,19 @@ mongoimport --db northwind --collection products --file /imports/products.json
 mkdir -p /queries
 mkdir -p /output
 
-for query_file in /queries/*.js; do
+for query_file in /queries/lista_1*.js; do
   query_name=$(basename "$query_file" .js)
 
-  cat $query_file | mongosh northwind --eval --quiet  | sed 's/^northwind> //' > "/output/${query_name}-result.json"
+  cat $query_file | mongosh northwind --eval --quiet  | sed 's/^northwind> //' > "/output/lista_1/${query_name}-result.json"
 
-  echo "Executed $query_file and saved the result to /output/${query_name}.json"
+  echo "Executed $query_file and saved the result to /output/lista_1/${query_name}.json"
 done
+
+for query_file in /queries/lista_2*.js; do
+  query_name=$(basename "$query_file" .js)
+
+  cat $query_file | mongosh northwind --eval --quiet  | sed 's/^northwind> //' > "/output/lista_2/${query_name}-result.json"
+
+  echo "Executed $query_file and saved the result to /output/lista_2${query_name}.json"
+done
+
